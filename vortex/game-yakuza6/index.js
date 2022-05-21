@@ -2,16 +2,16 @@
 const path = require('path');
 const { fs, log, util } = require('vortex-api');
 
-const GAME_ID = 'yakuza0';
-const STEAMAPP_ID = '638970';
+const GAME_ID = 'yakuza6';
+const STEAMAPP_ID = '1388590';
 
 const RMM_MODPAGE = 'https://github.com/SutandoTsukai181/RyuModManager/releases/latest';
 const RMM_EXE = 'RyuModManagerCLI.exe';
 const PARLESS_ASI = 'YakuzaParless.asi';
-const DATA_PATH = path.join('media', 'data');
-const MODS_PATH = path.join('media', 'mods');
+const DATA_PATH = 'data';
+const MODS_PATH = 'mods';
 const EXT_MODS_PATH = '_externalMods'
-const GAME_EXE = path.join('media', 'Yakuza0.exe');
+const GAME_EXE = 'Yakuza6.exe';
 
 const tools = [
     {
@@ -33,7 +33,7 @@ function main(context) {
 
     context.registerGame({
         id: GAME_ID,
-        name: 'Yakuza 0',
+        name: 'Yakuza 6: The Song of Life',
         mergeMods: true,
         queryPath: findGame,
         supportedTools: tools,
@@ -53,7 +53,7 @@ function main(context) {
     });
     
     context.registerInstaller(
-        'yakuza0-mod-installer',
+        'yakuza6-mod-installer',
         25,
         testMod,
         (files) => installMod(context.api, files)
@@ -68,7 +68,7 @@ function findGame() {
 }
 
 function prepareForModding(discovery, api) {
-    return checkForRMM(api, path.join(discovery.path, 'media', RMM_EXE));
+    return checkForRMM(api, path.join(discovery.path, RMM_EXE));
 }
 
 function checkForRMM(api, qModPath) {
@@ -174,7 +174,7 @@ async function findRootPath(files, dataPath) {
 }
 
 function findUnsupportedFiles(files) {
-    return files.filter(file => (file.endsWith('.usm')));
+    return [];
 }
 
 module.exports = {
