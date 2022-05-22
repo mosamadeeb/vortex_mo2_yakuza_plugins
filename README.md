@@ -7,7 +7,7 @@ Plugins for Yakuza game series to add support for [Vortex](https://www.nexusmods
 
 # Installing
 
-Check each plugin's **Installing** section on its own Nexus page:
+Check each plugin's **Installing** section on its own Nexus page. If Vortex says the extension "has not been approved" yet, then you can do a manual download from Nexus and drag the file over to the extensions tab in Vortex.
 
 [Yakuza 0 Support](https://www.nexusmods.com/site/mods/391)
 
