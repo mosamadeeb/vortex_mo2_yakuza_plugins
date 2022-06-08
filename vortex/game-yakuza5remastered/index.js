@@ -6,28 +6,12 @@ const GAME_ID = 'yakuza5remastered';
 const STEAMAPP_ID = '1105510';
 
 const RMM_MODPAGE = 'https://github.com/SutandoTsukai181/RyuModManager/releases/latest';
-const RMM_EXE = 'RyuModManagerCLI.exe';
+const RMM_EXE = 'RyuModManager.exe';
 const PARLESS_ASI = 'YakuzaParless.asi';
 const DATA_PATH = path.join('main', 'data');
 const MODS_PATH = path.join('main', 'mods');
 const EXT_MODS_PATH = '_externalMods'
 const GAME_EXE = path.join('main', 'Yakuza5.exe');
-
-const tools = [
-    {
-      id: 'rmm',
-      name: 'Ryu Mod Manager',
-      shortName: 'RMM',
-      logo: 'rmm.png',
-      executable: () => RMM_EXE,
-      requiredFiles: [
-        RMM_EXE,
-        PARLESS_ASI,
-      ],
-      relative: true,
-      shell: true,
-    },
-  ];
 
 function main(context) {
 
@@ -36,7 +20,6 @@ function main(context) {
         name: 'Yakuza 5 Remastered',
         mergeMods: true,
         queryPath: findGame,
-        supportedTools: tools,
         queryModPath: () => MODS_PATH,
         logo: 'gameart.jpg',
         executable: () => GAME_EXE,

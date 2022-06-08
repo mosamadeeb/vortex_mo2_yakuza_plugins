@@ -6,28 +6,12 @@ const GAME_ID = 'yakuza4remastered';
 const STEAMAPP_ID = '1105500';
 
 const RMM_MODPAGE = 'https://github.com/SutandoTsukai181/RyuModManager/releases/latest';
-const RMM_EXE = 'RyuModManagerCLI.exe';
+const RMM_EXE = 'RyuModManager.exe';
 const PARLESS_ASI = 'YakuzaParless.asi';
 const DATA_PATH = 'data';
 const MODS_PATH = 'mods';
 const EXT_MODS_PATH = '_externalMods'
 const GAME_EXE = 'Yakuza4.exe';
-
-const tools = [
-    {
-      id: 'rmm',
-      name: 'Ryu Mod Manager',
-      shortName: 'RMM',
-      logo: 'rmm.png',
-      executable: () => RMM_EXE,
-      requiredFiles: [
-        RMM_EXE,
-        PARLESS_ASI,
-      ],
-      relative: true,
-      shell: true,
-    },
-  ];
 
 function main(context) {
 
@@ -36,7 +20,6 @@ function main(context) {
         name: 'Yakuza 4 Remastered',
         mergeMods: true,
         queryPath: findGame,
-        supportedTools: tools,
         queryModPath: () => MODS_PATH,
         logo: 'gameart.jpg',
         executable: () => GAME_EXE,
