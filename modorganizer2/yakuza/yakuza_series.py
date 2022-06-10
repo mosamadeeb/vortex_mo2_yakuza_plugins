@@ -138,6 +138,7 @@ def yakuza_import_mods(plugin: BasicGame, win):
 class YakuzaGameModDataChecker(mobase.ModDataChecker):
 
     def __init__(self, valid_paths: set):
+        super().__init__()
         self._validPaths = valid_paths
 
     _validPaths: set
