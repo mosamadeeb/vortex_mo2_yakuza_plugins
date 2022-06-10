@@ -45,6 +45,16 @@ Ryu Mod Manager has to be run before launching the game whenever you install/ena
 
 Create a new game instance and choose the Yakuza game you want to mod. If you had some mods installed in your Ryu Mod Manager `/mods/` folder, you will get an option to import them into Mod Organizer. They will be imported according to their load order as defined by Ryu Mod Manager.
 
+Games have to be run through Mod Organizer in order for the mods to be applied. However, you can create a shortcut to desktop to run the game through Mod Organizer without opening it first.
+
+Alternatively, if you want to run the game through Steam with mods, you can follow these steps:
+
+ - Go the game in your Steam library
+ - Click on the settings icon -> Properties
+ - Put the following line in the Launch Options field (**including the quotes**), where `<MO_DIR>` is your Mod Organizer directory:
+
+`"<MO_DIR>\ModOrganizer.exe" %command%`
+
 ## Vortex
 
 Vortex will show an error if the mod that was downloaded is not supported/has an invalid format. In that case, you can either install it manually or ask the mod author to reupload the mod with RMM support.
