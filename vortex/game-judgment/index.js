@@ -13,6 +13,39 @@ const MODS_PATH = path.join('runtime', 'media', 'mods');
 const EXT_MODS_PATH = '_externalMods'
 const GAME_EXE = path.join('runtime', 'media', 'Judgment.exe');
 
+const tools = [
+    {
+      id: 'rmm',
+      name: 'Run Ryu Mod Manager and launch the game',
+      shortName: 'RMM',
+      logo: 'rmm.png',
+      executable: () => RMM_EXE,
+      requiredFiles: [
+        RMM_EXE,
+        PARLESS_ASI,
+      ],
+      parameters: [
+        '--run',
+        '--silent',
+      ],
+      relative: true,
+      shell: true,
+    },
+    {
+        id: 'rmm',
+        name: 'Run Ryu Mod Manager only',
+        shortName: 'RMM',
+        logo: 'rmm.png',
+        executable: () => RMM_EXE,
+        requiredFiles: [
+          RMM_EXE,
+          PARLESS_ASI,
+        ],
+        relative: true,
+        shell: true,
+      },
+];
+
 function main(context) {
 
     context.registerGame({
@@ -20,6 +53,7 @@ function main(context) {
         name: 'Judgment',
         mergeMods: true,
         queryPath: findGame,
+        supportedTools: tools,
         queryModPath: () => MODS_PATH,
         logo: 'gameart.jpg',
         executable: () => GAME_EXE,
